@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from 'components/app';
-import Orchestrator from 'components/orchestrator';
+//import Orchestrator from 'components/orchestrator';
+import Orchestrator from 'components/orchestrator-soft';
 import surveyUnitIdbService from 'utils/indexedbb/services/surveyUnit-idb-service';
 import Preloader from 'components/shared/preloader';
 import Error from 'components/shared/Error';
@@ -68,7 +69,7 @@ const Visualizer = () => {
       {error && <Error message={error} />}
       {questionnaireUrl && source && surveyUnit && suggesters && (
         <Orchestrator
-          surveyUnit={surveyUnit}
+          data={surveyUnit}
           source={source}
           suggesters={suggesters}
           standalone={standalone}
