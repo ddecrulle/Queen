@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import root from 'react-shadow/material-ui';
 import { BrowserRouter } from 'react-router-dom';
 import Rooter from 'components/router';
 import { StyleProvider } from 'components/style';
@@ -27,7 +26,7 @@ const App = () => {
   }, [init]);
 
   return (
-    <root.div id="queen-container" style={customStyle}>
+    <div id="queen-container" class={customStyle}>
       {configuration && (
         <AppContext.Provider value={{ ...configuration, online: online }}>
           <StyleProvider>
@@ -41,7 +40,7 @@ const App = () => {
         </AppContext.Provider>
       )}
       {!configuration && <Preloader message={D.waitingConfiguration} />}
-    </root.div>
+    </div>
   );
 };
 
